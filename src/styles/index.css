@@ -1,4 +1,21 @@
+#app{
+    height: 100vh;
+    width: 100vw;
+    background-color: whitesmoke;
+    
+}
 
+.Homediv{
+    height: 100vh;
+    width: 100vw;
+    background-color: whitesmoke;
+
+}
+.todolistbox{
+    margin: auto;
+    height: 10vh;
+    width: 10vw;
+}
 /* 
 
     You can write your own styles here...
