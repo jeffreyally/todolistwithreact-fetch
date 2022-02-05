@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { taskLi } from "./taskli.jsx";
+
 
 export const TodoList = (props) => {
 	const [inputTask, setInputTask] = useState("");
