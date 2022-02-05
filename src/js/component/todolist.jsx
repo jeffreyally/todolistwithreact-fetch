@@ -9,7 +9,7 @@ export const TodoList = () => {
 			<div className="todolistbox">
 				<h1>Todos</h1>
 				<input
-                    onKeyUp={()=>}
+                    onKeyUp={(e) => modifyTask(...taskList, inputTask])}
 					type=""
 					value={inputTask}
 					onChange={(e) => setInputTask(e.target.value)}></input>
