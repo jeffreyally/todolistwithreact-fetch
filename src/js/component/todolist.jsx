@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 
-
 export const TodoList = (props) => {
 	const [inputTask, setInputTask] = useState("");
 	const [taskList, modifyTask] = useState([]);
@@ -14,13 +13,13 @@ export const TodoList = (props) => {
 	return (
 		<>
 			<div className="todolistbox">
-				<h1>Todos</h1>
+				<h1 style={{ marginLeft: "45px" }}>Todos</h1>
 				<input
 					onKeyUp={(e) => saveTask(e)}
 					type=""
 					value={inputTask}
 					onChange={(e) => setInputTask(e.target.value)}></input>
-				<ul>
+				<ul style={{ listStyleType: "none" }}>
 					{taskList.map((task) => {
 						return <li>{task}</li>;
 					})}
