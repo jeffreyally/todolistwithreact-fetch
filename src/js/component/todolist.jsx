@@ -13,7 +13,7 @@ export const TodoList = (props) => {
 	return (
 		<>
 			<div className="todolistbox">
-				<h1 style={{ marginLeft: "45px" }}>Todos</h1>
+				<h1>Todos</h1>
 				<input
 					onKeyUp={(e) => saveTask(e)}
 					type=""
