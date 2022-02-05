@@ -19,25 +19,41 @@
 
 .todolistbox{
     
-    height:50vh;
+    height:100vh;
     width:50vw;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    align-content: flex-start;
+}
+.h1box{
+    display:flex;
+    overflow:auto;
+    height:100vh;
+    width:50vw;
+    flex-direction: column;
+    
+
 }
 
 h1{
     margin:0 auto;
+    
 }
 
 input {
     width:50%;
     margin: 0 auto;
 }
-ul {
+ol {
+    margin:0 25%;
+    
 
-    position:relative;
-    width:450px;
+
+}
+
+.deletebutton{
+    
 }
 /* 
 

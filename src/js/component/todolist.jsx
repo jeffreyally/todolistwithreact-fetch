@@ -13,17 +13,19 @@ export const TodoList = (props) => {
 	return (
 		<>
 			<div className="todolistbox">
-				<h1>Todos</h1>
-				<input
-					onKeyUp={(e) => saveTask(e)}
-					type=""
-					value={inputTask}
-					onChange={(e) => setInputTask(e.target.value)}></input>
-				<ul style={{ listStyleType: "none" }}>
-					{taskList.map((task) => {
-						return <li>{task}</li>;
-					})}
-				</ul>
+				<div className="h1box">
+					<h1>Todos</h1>
+					<input
+						onKeyUp={(e) => saveTask(e)}
+						type=""
+						value={inputTask}
+						onChange={(e) => setInputTask(e.target.value)}></input>
+					<ol type="1">
+						{taskList.map((task) => {
+							return <li>{task}</li>;
+						})}
+					</ol>
+				</div>
 			</div>
 		</>
 	);
