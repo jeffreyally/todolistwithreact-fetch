@@ -46,23 +46,38 @@ input {
     margin: 0 auto;
 }
 ol {
-    margin-left: 20%;
+    margin-left: 24%;
     width:100%;
     padding: 0;
 
 
 }
 
-.deletebutton{
-    padding: 4px 8px;
-    margin: 1px 1px;
-    margin-left: auto;
-}
 
-li{
+
+.thetask{
     display:flex;
     justify-content: space-between;
-    width:60%;
+    width:55%;
+}
+
+.fa-trash{
+    opacity: 0;
+}
+.thetask:hover .fa-trash{
+    opacity: 1;
+    
+}
+.thetask:hover .fa-trash:hover{
+    opacity: 1;
+    color:red;
+    transition: ease 0.3s;
+    transform: scale(1.2);
+    
+  
+     
+    
+    
 }
 /* 
 

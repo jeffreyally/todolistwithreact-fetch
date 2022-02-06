@@ -23,12 +23,21 @@ export const TodoList = (props) => {
 					<ol type="1">
 						{taskList.map((task) => {
 							return (
-								<li>
-									<span>{task}</span>
-									<button className="deletebutton">
-										Delete
-									</button>
-								</li>
+								<>
+									<br></br>
+									<li>
+										<span className="thetask">
+											{task}
+											<i
+												className="fa fa-trash"
+												onClick={(e) =>
+													console.log(
+														e.target.previousSibling
+													)
+												}></i>
+										</span>
+									</li>
+								</>
 							);
 						})}
 					</ol>
