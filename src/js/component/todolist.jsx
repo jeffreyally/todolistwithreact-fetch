@@ -22,7 +22,14 @@ export const TodoList = (props) => {
 						onChange={(e) => setInputTask(e.target.value)}></input>
 					<ol type="1">
 						{taskList.map((task) => {
-							return <li>{task}</li>;
+							return (
+								<li>
+									<span>{task}</span>
+									<button className="deletebutton">
+										Delete
+									</button>
+								</li>
+							);
 						})}
 					</ol>
 				</div>

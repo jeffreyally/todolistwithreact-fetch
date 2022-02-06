@@ -28,7 +28,7 @@
 }
 .h1box{
     display:flex;
-    overflow:auto;
+    
     height:100vh;
     width:50vw;
     flex-direction: column;
@@ -42,18 +42,27 @@ h1{
 }
 
 input {
-    width:50%;
+    width:60%;
     margin: 0 auto;
 }
 ol {
-    margin:0 25%;
-    
+    margin-left: 20%;
+    width:100%;
+    padding: 0;
 
 
 }
 
 .deletebutton{
-    
+    padding: 4px 8px;
+    margin: 1px 1px;
+    margin-left: auto;
+}
+
+li{
+    display:flex;
+    justify-content: space-between;
+    width:60%;
 }
 /* 
 
