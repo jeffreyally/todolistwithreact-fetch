@@ -42,11 +42,11 @@ h1{
 }
 
 input {
-    width:60%;
+    width:50%;
     margin: 0 auto;
 }
 ol {
-    margin-left: 24%;
+    margin-left: 27%;
     width:100%;
     padding: 0;
 
@@ -58,11 +58,12 @@ ol {
 .thetask{
     display:flex;
     justify-content: space-between;
-    width:55%;
+    width:48%;
 }
 
 .fa-trash{
     opacity: 0;
+    padding-top: 3px;
 }
 .thetask:hover .fa-trash{
     opacity: 1;
