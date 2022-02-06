@@ -14,7 +14,7 @@ export const TodoList = (props) => {
 		<>
 			<div className="todolistbox">
 				<div className="h1box">
-					<h1>Todos</h1>
+					<h1>To-Do List</h1>
 					<input
 						onKeyUp={(e) => saveTask(e)}
 						type=""
@@ -31,8 +31,23 @@ export const TodoList = (props) => {
 											<i
 												className="fa fa-trash"
 												onClick={(e) =>
-													console.log(
-														e.target.previousSibling
+													modifyTask(
+														taskList.filter(
+															(eachtask) => {
+																console.log(
+																	eachtask !=
+																		e.target
+																			.previousSibling
+																			.data
+																);
+																return (
+																	eachtask !=
+																	e.target
+																		.previousSibling
+																		.data
+																);
+															}
+														)
 													)
 												}></i>
 										</span>
@@ -46,3 +61,22 @@ export const TodoList = (props) => {
 		</>
 	);
 };
+let g = `console.log(
+	e.target.previousSibling.data
+	
+	console.log(true)`;
+
+let f = `onClick={(e) =>
+		taskList.filter(
+			(writtentask) => {
+				console.log(
+					writtentask
+				);
+				return (
+					writtentask !=
+					e.target
+						.previousSibling
+				);
+			}
+		)
+	}`;
