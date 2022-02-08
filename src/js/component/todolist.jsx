@@ -7,6 +7,7 @@ export const TodoList = (props) => {
 	let saveTask = (e) => {
 		if (e.keyCode == 13) {
 			modifyTask([...taskList, inputTask]);
+			//s st stu stud "study"
 			setInputTask("");
 		}
 	};
@@ -21,30 +22,27 @@ export const TodoList = (props) => {
 						value={inputTask}
 						onChange={(e) => setInputTask(e.target.value)}></input>
 					<ol type="1">
-						{taskList.map((task) => {
+						{taskList.map((task, makeidtheindex) => {
 							return (
 								<>
 									<br></br>
 									<li>
-										<span className="thetask">
+										<span
+											className="thetask"
+											id={makeidtheindex}>
 											{task}
 											<i
 												className="fa fa-trash"
 												onClick={(e) =>
 													modifyTask(
 														taskList.filter(
-															(eachtask) => {
-																console.log(
-																	eachtask !=
-																		e.target
-																			.previousSibling
-																			.data
-																);
+															(
+																eachtask,
+																eachtaskindex
+															) => {
 																return (
-																	eachtask !=
-																	e.target
-																		.previousSibling
-																		.data
+																	eachtaskindex !=
+																	makeidtheindex
 																);
 															}
 														)
@@ -66,17 +64,25 @@ let g = `console.log(
 	
 	console.log(true)`;
 
-let f = `onClick={(e) =>
+let f = `<i
+className="fa fa-trash"
+onClick={(e) =>
+	modifyTask(
 		taskList.filter(
-			(writtentask) => {
+			(eachtask) => {
 				console.log(
-					writtentask
+					eachtask !=
+						e.target
+							.previousSibling
+							.data
 				);
 				return (
-					writtentask !=
+					eachtask !=
 					e.target
 						.previousSibling
+						.data
 				);
 			}
 		)
-	}`;
+	)
+}>`;
