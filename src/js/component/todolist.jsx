@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { TasksWithDeleteIcon } from "./taskswithdelete.jsx";
 
 export const TodoList = (props) => {
 	const [inputTask, setInputTask] = useState("");
@@ -21,40 +22,8 @@ export const TodoList = (props) => {
 						type=""
 						value={inputTask}
 						onChange={(e) => setInputTask(e.target.value)}></input>
-					<ol type="1">
-						{taskList.map((task, makeidtheindex) => {
-							return (
-								<>
-									<br></br>
-									<li>
-										<span
-											className="thetask"
-											id={makeidtheindex}>
-											{task}
-											<i
-												className="fa fa-trash"
-												onClick={(e) =>
-													modifyTask(
-														taskList.filter(
-															(
-																eachtask,
-																eachtaskindex
-															) => {
-																return (
-																	eachtaskindex !=
-																	makeidtheindex
-																);
-															}
-														)
-													)
-												}></i>
-										</span>
-									</li>
-								</>
-							);
-						})}
-					</ol>
 				</div>
+				<TasksWithDeleteIcon tlist={taskList} modlist={modifyTask} />
 			</div>
 		</>
 	);

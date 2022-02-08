@@ -23,13 +23,12 @@
     width:50vw;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: flex-start;
+    
 }
 .h1box{
     display:flex;
     
-    height:100vh;
+    height:10vh;
     width:50vw;
     flex-direction: column;
     
