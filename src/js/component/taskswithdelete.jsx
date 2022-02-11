@@ -16,7 +16,7 @@ export const TasksWithDeleteIcon = (props) => {
 										<span
 											className="thetask"
 											id={makeidtheindex}>
-											{maptask.task}
+											{maptask.label}
 
 											<i
 												className="fa fa-trash"
@@ -27,7 +27,8 @@ export const TasksWithDeleteIcon = (props) => {
 																eachtask,
 																eachtaskindex
 															) => {
-																eachtask.label = true;
+																//this is where I think I will delete one task from the todo list
+																//(PUT request?)
 																return (
 																	eachtaskindex !=
 																	makeidtheindex
