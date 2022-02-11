@@ -5,10 +5,11 @@ import { TasksWithDeleteIcon } from "./taskswithdelete.jsx";
 export const TodoList = (props) => {
 	const [inputTask, setInputTask] = useState("");
 	const [taskList, modifyTask] = useState([]);
+	//update modifyTask to setTaskList in the future
 	let saveTask = (e) => {
 		if (e.keyCode == 13) {
-			modifyTask([...taskList, inputTask]);
-			//s st stu stud "study"
+			modifyTask([...taskList, { task: inputTask, done: false }]);
+
 			setInputTask("");
 		}
 	};
@@ -28,30 +29,3 @@ export const TodoList = (props) => {
 		</>
 	);
 };
-let g = `console.log(
-	e.target.previousSibling.data
-	
-	console.log(true)`;
-
-let f = `<i
-className="fa fa-trash"
-onClick={(e) =>
-	modifyTask(
-		taskList.filter(
-			(eachtask) => {
-				console.log(
-					eachtask !=
-						e.target
-							.previousSibling
-							.data
-				);
-				return (
-					eachtask !=
-					e.target
-						.previousSibling
-						.data
-				);
-			}
-		)
-	)
-}>`;
