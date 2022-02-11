@@ -8,14 +8,14 @@ export const TasksWithDeleteIcon = (props) => {
 			<ol type="1">
 				{props.tlist.length == 0
 					? null
-					: props.tlist.map((maptask, makeidtheindex) => {
+					: props.tlist.map((maptask, makespanIDtheindex) => {
 							return (
 								<>
 									<br></br>
 									<li>
 										<span
 											className="thetask"
-											id={makeidtheindex}>
+											id={makespanIDtheindex}>
 											{maptask.label}
 
 											<i
@@ -31,7 +31,7 @@ export const TasksWithDeleteIcon = (props) => {
 																//(PUT request?)
 																return (
 																	eachtaskindex !=
-																	makeidtheindex
+																	makespanIDtheindex
 																);
 															}
 														)
