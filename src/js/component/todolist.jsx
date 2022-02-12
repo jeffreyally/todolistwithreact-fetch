@@ -9,28 +9,27 @@ export const TodoList = (props) => {
 			method: "GET",
 		})
 			.then((response) => {
-				console.log(response);
 				return response.json();
 			})
 			.then((responseinJS) => {
 				modifyTask(responseinJS);
 				console.log("Response in JS", responseinJS);
-			}),
-			[];
-	});
+			});
+	}, []);
+
 	const [inputTask, setInputTask] = useState("");
 	const [taskList, modifyTask] = useState([]);
 	//update modifyTask to setTaskList in the future
 	let saveTask = (e) => {
 		if (e.keyCode == 13) {
-			// 	const newTask = {
-			// 		task: inputTask,
-			// 		done: false,
-			// 	}
-			modifyTask([...taskList, { label: inputTask, done: false }]);
-			//above modifyTask([...taskList, newTask]) could also be used
-			//this is where I think I will send a task to the backend(PUT request?)
-			//it needs to be an array of objects so I believe that part is in place at least
+			let todos = [...taskList];
+			let newTodos = todos.concat({
+				// takes previous list and new item to make current list
+				label: inputTask,
+				done: false,
+			});
+			console.log(newTodos);
+			modifyTask(newTodos);
 			setInputTask("");
 		}
 	};
