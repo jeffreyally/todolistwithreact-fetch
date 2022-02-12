@@ -1,13 +1,23 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TasksWithDeleteIcon } from "./taskswithdelete.jsx";
 
-//const URI = 'http://assets.breatheco.de/apis/fake/todos/user/jeffreyally'
-//useEffect(() => {
-//Runs only on the first render
-//}, []); we need to populate our todo list on first render
-
 export const TodoList = (props) => {
+	const URI = "https://assets.breatheco.de/apis/fake/todos/user/jeffreyally";
+	useEffect(() => {
+		fetch(URI, {
+			method: "GET",
+		})
+			.then((response) => {
+				console.log(response);
+				return response.json();
+			})
+			.then((responseinJS) => {
+				modifyTask(responseinJS);
+				console.log("Response in JS", responseinJS);
+			}),
+			[];
+	});
 	const [inputTask, setInputTask] = useState("");
 	const [taskList, modifyTask] = useState([]);
 	//update modifyTask to setTaskList in the future
