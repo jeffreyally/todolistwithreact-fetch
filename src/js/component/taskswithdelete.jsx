@@ -31,6 +31,9 @@ export const TasksWithDeleteIcon = (props) => {
 															console.log(
 																maptask
 															);
+															props.modlist([
+																maptask,
+															]);
 														}
 													}}
 													className={
