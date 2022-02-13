@@ -74,11 +74,15 @@ ol {
     transition: ease 0.3s;
     transform: scale(1.2);
     
-  
-     
-    
-    
 }
+     
+.fa-check-square{
+        color: green;
+        margin:2000px;
+        text-decoration: line-through;
+ }
+    
+
 /* 
 
     You can write your own styles here...
