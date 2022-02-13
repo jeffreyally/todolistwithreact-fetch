@@ -77,9 +77,16 @@ ol {
     
 }
 
-.deletebutton{
+.flexbuttons{
+    display:flex;
+    
+    justify-content: space-between;
     margin:0 auto;
-    width:150px;
+  
+}
+
+.deletebutton{
+    margin:10px;
 }
      
 .green{
@@ -87,6 +94,8 @@ ol {
         
         text-decoration: line-through;
  }
+
+ 
     
 
 /* 

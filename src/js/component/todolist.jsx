@@ -9,7 +9,31 @@ export const TodoList = (props) => {
 			method: "GET",
 		})
 			.then((response) => {
-				return response.json();
+				if (response.status == 404) {
+					fetch(URI, {
+						method: "POST",
+						body: JSON.stringify([]), // data can be `string` or {object}!
+						headers: {
+							"Content-Type": "application/json",
+						},
+					})
+						.then((resp) => {
+							return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
+						})
+						.then((data) => {
+							// from class notes ----console.log("success", response)
+							// from class notes ----getFetch()
+							//here is were your code should start after the fetch finishes
+							console.log(data); //this will print on the console the exact object received from the server
+						})
+						.catch((error) => {
+							//error handling
+							console.log(error);
+							//from class notes ----console.error("error", error);
+						});
+				} else {
+					return response.json();
+				}
 			})
 			.then((responseinJS) => {
 				modifyTask(responseinJS);
@@ -27,18 +51,53 @@ export const TodoList = (props) => {
 			},
 		})
 			.then((resp) => {
-				// from class notes ----WOULD I USE THROW ERROR HERE ???
-				// from class notes ----if(!resp.ok){
-				//	from class notes ----throw Error(resp.statusText)}
-				//console.log(resp.ok); // will be true if the response is successfull
-				//console.log(resp.status); // the status code = 200 or code = 400 etc.
-				//console.log(resp.text()); // will try return the exact result as string
 				return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
 			})
 			.then((data) => {
 				// from class notes ----console.log("success", response)
 				// from class notes ----getFetch()
 				//here is were your code should start after the fetch finishes
+				console.log(data); //this will print on the console the exact object received from the server
+			})
+			.catch((error) => {
+				//error handling
+				console.log(error);
+				//from class notes ----console.error("error", error);
+			});
+	};
+
+	const deleteRequest = (updatedTodos) => {
+		fetch(URI, {
+			method: "DELETE",
+		})
+			.then((response) => {
+				return response.json();
+			})
+			.then((responseinJS) => {
+				modifyTask([]);
+			});
+	};
+
+	const postRequest = () => {
+		fetch(URI, {
+			method: "POST",
+			body: JSON.stringify([
+				{
+					label: "sample task",
+					done: false,
+				},
+			]), // data can be `string` or {object}!
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+			.then((resp) => {
+				return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
+			})
+			.then((data) => {
+				// from class notes ----console.log("success", response)
+				// from class notes ----getFetch()
+				modifyTask([{ label: "sample task", done: false }]);
 				console.log(data); //this will print on the console the exact object received from the server
 			})
 			.catch((error) => {
@@ -74,6 +133,8 @@ export const TodoList = (props) => {
 					tlist={taskList}
 					modlist={modifyTask}
 					putRequest={putRequest}
+					deleteRequest={deleteRequest}
+					postRequest={postRequest}
 				/>
 			</div>
 		</>

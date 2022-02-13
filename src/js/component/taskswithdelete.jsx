@@ -18,28 +18,6 @@ export const TasksWithDeleteIcon = (props) => {
 											id={makespanIDtheindex}>
 											<span>{maptask.label}</span>
 											<span>
-												<span
-													onClick={(e) => {
-														if (
-															props.tlist.indexOf(
-																maptask ==
-																	makespanIDtheindex
-															)
-														) {
-															maptask.done =
-																!maptask.done;
-															console.log(
-																maptask
-															);
-														}
-													}}
-													className={
-														maptask.done
-															? "green"
-															: ""
-													}>
-													<i className="fas fa-check-square"></i>
-												</span>
 												<i
 													className="fa fa-trash"
 													onClick={(e) => {
@@ -66,9 +44,48 @@ export const TasksWithDeleteIcon = (props) => {
 							);
 					  })}
 			</ol>
-			<button class="deletebutton">Delete All Tasks</button>
+			<span class="flexbuttons">
+				<button
+					class="deletebutton"
+					onClick={() => {
+						props.deleteRequest(props.tlist);
+					}}>
+					Delete Tasklist
+				</button>
+				<br></br>
+				<button
+					class="deletebutton"
+					onClick={() => {
+						props.postRequest();
+					}}>
+					Start New Tasklist
+				</button>
+			</span>
 		</>
 	);
 };
 
 let holdit = `<i onClick={(e) => { if ( props.tlist.indexOf( maptask == makespanIDtheindex ) ) { maptask.done = !maptask.done; console.log(maptask); } }} className={ maptask.done ? "" : "green" } className="fas fa-check-square"></i>`;
+
+let failedcheckbox = `	<span
+onClick={(e) => {
+	if (
+		props.tlist.indexOf(
+			maptask ==
+				makespanIDtheindex
+		)
+	) {
+		maptask.done =
+			!maptask.done;
+		console.log(
+			maptask
+		);
+	}
+}}
+className={
+	maptask.done
+		? "green"
+		: ""
+}>
+<i className="fas fa-check-square"></i>
+</span>`;
