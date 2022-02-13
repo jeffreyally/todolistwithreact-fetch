@@ -46,3 +46,5 @@ export const TasksWithDeleteIcon = (props) => {
 		</>
 	);
 };
+
+let holdit = `<i onClick={(e) => { if ( props.tlist.indexOf( maptask == makespanIDtheindex ) ) { maptask.done = !maptask.done; console.log(maptask); } }} className={ maptask.done ? "" : "green" } className="fas fa-check-square"></i>`;
