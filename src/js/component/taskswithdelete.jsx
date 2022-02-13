@@ -20,23 +20,23 @@ export const TasksWithDeleteIcon = (props) => {
 
 											<i
 												className="fa fa-trash"
-												onClick={(e) =>
-													props.modlist(
+												onClick={(e) => {
+													let filteredarray =
 														props.tlist.filter(
 															(
-																eachtask,
-																eachtaskindex
-															) => {
-																//this is where I think I will delete one task from the todo list
-																//(PUT request?)
-																return (
-																	eachtaskindex !=
-																	makespanIDtheindex
-																);
-															}
-														)
-													)
-												}></i>
+																tasktToRemove,
+																i
+															) =>
+																i !=
+																makespanIDtheindex
+														);
+													props.modlist(
+														filteredarray
+													);
+													props.putRequest(
+														filteredarray
+													);
+												}}></i>
 										</span>
 									</li>
 								</>
