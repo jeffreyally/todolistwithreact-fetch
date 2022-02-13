@@ -76,6 +76,11 @@ ol {
     transform: scale(1.2);
     
 }
+
+.deletebutton{
+    margin:0 auto;
+    width:150px;
+}
      
 .green{
         color: green;
