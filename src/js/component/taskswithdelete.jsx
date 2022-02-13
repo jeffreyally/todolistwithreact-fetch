@@ -50,15 +50,7 @@ export const TasksWithDeleteIcon = (props) => {
 					onClick={() => {
 						props.deleteRequest(props.tlist);
 					}}>
-					Delete Tasklist
-				</button>
-				<br></br>
-				<button
-					class="deletebutton"
-					onClick={() => {
-						props.postRequest();
-					}}>
-					Start New Tasklist
+					Delete then Restart Tasklist
 				</button>
 			</span>
 		</>
