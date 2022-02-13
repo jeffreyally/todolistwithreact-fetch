@@ -61,6 +61,7 @@ ol {
 }
 
 .fa-trash{
+    margin-left: 10px;
     opacity: 0.3;
     padding-top: 3px;
 }
@@ -76,9 +77,9 @@ ol {
     
 }
      
-.fa-check-square{
+.green{
         color: green;
-        margin:2000px;
+        margin: 10px;
         text-decoration: line-through;
  }
     
