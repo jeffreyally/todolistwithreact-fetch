@@ -9,6 +9,7 @@ export const TodoList = (props) => {
 			method: "GET",
 		})
 			.then((response) => {
+				//if the list was deleted, the code below should generate a new one by clicking the refresh button
 				if (response.status == 404) {
 					fetch(URI, {
 						method: "POST",
@@ -21,8 +22,7 @@ export const TodoList = (props) => {
 							return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
 						})
 						.then((data) => {
-							// from class notes ----console.log("success", response)
-							// from class notes ----getFetch()
+							// shout out to Christina for the
 							//here is were your code should start after the fetch finishes
 							console.log(data); //this will print on the console the exact object received from the server
 						})

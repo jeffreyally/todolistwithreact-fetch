@@ -7,42 +7,46 @@ export const TasksWithDeleteIcon = (props) => {
 		<>
 			<ol type="1">
 				{props.tlist.length == 0
-					? null
-					: props.tlist.map((maptask, makespanIDtheindex) => {
-							return (
-								<>
-									<br></br>
-									<li>
-										<span
-											className="thetask"
-											id={makespanIDtheindex}>
-											<span>{maptask.label}</span>
-											<span>
-												<i
-													className="fa fa-trash"
-													onClick={(e) => {
-														let filteredarray =
-															props.tlist.filter(
-																(
-																	tasktToRemove,
-																	i
-																) =>
-																	i !=
-																	makespanIDtheindex
+					? null //if the list is empty show nothing so that a line with just a trashcan at the end is not shown
+					: props.tlist.map(
+							(maptask, indexforIDandFilterFunction) => {
+								return (
+									<>
+										<br></br>
+										<li>
+											<span
+												className="thetask"
+												id={
+													indexforIDandFilterFunction
+												}>
+												<span>{maptask.label}</span>
+												<span>
+													<i
+														className="fa fa-trash"
+														onClick={(e) => {
+															let filteredarray =
+																props.tlist.filter(
+																	(
+																		tasktToRemove,
+																		i
+																	) =>
+																		i !=
+																		indexforIDandFilterFunction
+																);
+															props.modlist(
+																filteredarray
 															);
-														props.modlist(
-															filteredarray
-														);
-														props.putRequest(
-															filteredarray
-														);
-													}}></i>
+															props.putRequest(
+																filteredarray
+															);
+														}}></i>
+												</span>
 											</span>
-										</span>
-									</li>
-								</>
-							);
-					  })}
+										</li>
+									</>
+								);
+							}
+					  )}
 			</ol>
 			<span class="flexbuttons">
 				<button
@@ -56,28 +60,3 @@ export const TasksWithDeleteIcon = (props) => {
 		</>
 	);
 };
-
-let holdit = `<i onClick={(e) => { if ( props.tlist.indexOf( maptask == makespanIDtheindex ) ) { maptask.done = !maptask.done; console.log(maptask); } }} className={ maptask.done ? "" : "green" } className="fas fa-check-square"></i>`;
-
-let failedcheckbox = `	<span
-onClick={(e) => {
-	if (
-		props.tlist.indexOf(
-			maptask ==
-				makespanIDtheindex
-		)
-	) {
-		maptask.done =
-			!maptask.done;
-		console.log(
-			maptask
-		);
-	}
-}}
-className={
-	maptask.done
-		? "green"
-		: ""
-}>
-<i className="fas fa-check-square"></i>
-</span>`;
